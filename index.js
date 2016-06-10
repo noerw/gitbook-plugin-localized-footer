@@ -6,7 +6,7 @@ module.exports = {
     hooks: {
         // called on each book & each language book
         'init': function() {
-            var cfg = this.config.get('pluginsConfig.localized-footer');
+            var cfg = this.config.get('pluginsConfig.localized-footer'), _this = this;
 
             try {
                 fs.statSync(this.resolve(cfg.filename));
@@ -17,13 +17,13 @@ module.exports = {
 
             hasFooterFile = true;
 
-            var data = fs.readFileSync(this.resolve(cfg.filename), 'utf-8');
-            this.formatString('markdown', data)
+            this.readFileAsString(cfg.filename)
+                .then(function (data) { return _this.renderBlock('markdown',data); }, console.error)
                 .then(function(html) { footerString = html; }, console.error);
         },
         'page:before': function(page) {
             // append to the website renderer only
-            if (!hasFooterFile) return page;
+            if (this.output.name !== 'website' || !hasFooterFile) return page;
             page.content = page.content + '\n{% pagefooter %}' + footerString + '{% endpagefooter%}';
             return page;
         }
