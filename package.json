@@ -1,0 +1,32 @@
+{
+  "name": "gitbook-plugin-localized-footer",
+  "version": "0.1.0",
+  "engines": {
+    "gitbook": ">=2.6.7"
+  },
+  "gitbook": {
+    "properties": {
+      "filename": {
+        "type": "string",
+        "default": "FOOTER.md",
+        "description": "name or relative path to the footer content file of each book"
+      }
+    }
+  },
+  "description": "add a footer to each page of a gitbook, allows i10n",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "noerw",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/noerw/gitbook-plugin-localized-footer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/noerw/gitbook-plugin-localized-footer/issues"
+  },
+  "homepage": "https://github.com/noerw/gitbook-plugin-localized-footer#readme",
+  "license": "LGPL-3.0",
+  "readme": "ERROR: No README data found!",
+}
