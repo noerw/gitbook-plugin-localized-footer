@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-localized-footer",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "engines": {
     "gitbook": ">=3.1.0"
   },
@@ -27,6 +27,5 @@
     "url": "https://github.com/noerw/gitbook-plugin-localized-footer/issues"
   },
   "homepage": "https://github.com/noerw/gitbook-plugin-localized-footer#readme",
-  "license": "LGPL-3.0",
-  "readme": "ERROR: No README data found!"
+  "license": "LGPL-3.0"
 }
