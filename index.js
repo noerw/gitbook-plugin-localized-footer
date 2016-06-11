@@ -18,20 +18,20 @@ module.exports = {
             hasFooterFile = true;
 
             this.readFileAsString(cfg.filename)
-                .then(function (data) { return _this.renderBlock('markdown',data); }, console.error)
-                .then(function(html) { footerString = html; }, console.error);
+                .then(function (data) { return _this.renderBlock('markdown',data); }, this.log.error)
+                .then(function(html) { footerString = html; }, this.log.error);
         },
         'page:before': function(page) {
             // append to the website renderer only
             if (this.output.name !== 'website' || !hasFooterFile) return page;
-            page.content = page.content + '\n{% pagefooter %}' + footerString + '{% endpagefooter%}';
+            page.content = page.content + '\n{% localizedfooter %}' + footerString + '{% endlocalizedfooter%}';
             return page;
         }
     },
     blocks: {
-        'pagefooter': {
+        'localizedfooter': {
             process: function(block) {
-                return '<div id="page-footer" style="color: #666;"><hr>' + block.body + '</div>';
+                return '<div id="page-footer"><hr>' + block.body + '</div>';
             }
         }
     }

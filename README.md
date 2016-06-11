@@ -1,12 +1,14 @@
 # gitbook-plugin-localized-footer
 
-This gitbook plugin allows adding a custom footer to each page.
-Requires `gitbook ^3.1.0`.
+This gitbook plugin allows adding a custom footer to each page on the website output.
+Requires `gitbook >=2.6.7` (should also run on 2.5.x, not tested).
 
-The footer content is read from a markdown file in each books' content directory (by default `FOOTER.md`), so for multi-language books translated content is possible.
+I wrote these ~40 lines, as other footer-plugins were removed or insufficient for my needs.
+Hoping footers will become functionality of the gitbook core.
+
+The footer content is read from a markdown file in each books' content directory (by default `FOOTER.md`), so translated content for multi-language is possible.
 
 Custom styles may be applied on the selector `#page-footer`.
-
 
 ## usage
 
@@ -14,7 +16,7 @@ Custom styles may be applied on the selector `#page-footer`.
 
     ```json
     {
-      "gitbook": "3.1.0",
+      "gitbook": "3.1.1",
       "plugins": [ "localized-footer"],
       "localized-footer": {
         "filename": "../myCustomName.md" // optional, defaults to "FOOTER.md"
@@ -30,7 +32,7 @@ Custom styles may be applied on the selector `#page-footer`.
     ```md
     *content published under [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)*
     ```
-
+    
 ## license
 
 LGPL-3.0
