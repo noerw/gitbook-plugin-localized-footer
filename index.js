@@ -23,7 +23,7 @@ module.exports = {
         },
         'page:before': function(page) {
             // append to the website renderer only
-            if (!hasFooterFile) return page;
+            if (!hasFooterFile || this.config.options.generator !== 'website') return page;
             page.content = page.content + '\n{% pagefooter %}' + footerString + '{% endpagefooter%}';
             return page;
         }
