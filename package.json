@@ -6,6 +6,11 @@
   },
   "gitbook": {
     "properties": {
+      "hline": {
+        "type": "boolean",
+        "default": "true",
+        "description": "whether to include an horizontal line above the footer"
+      },
       "filename": {
         "type": "string",
         "default": "FOOTER.md",

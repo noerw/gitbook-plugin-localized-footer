@@ -1,12 +1,13 @@
 var fs = require('fs'),
     footerString = '',
+    cfg,
     hasFooterFile;
 
 module.exports = {
     hooks: {
         // called on each book & each language book
         'init': function() {
-            var cfg = this.config.get('pluginsConfig.localized-footer'), _this = this;
+            cfg = this.config.get('pluginsConfig.localized-footer'), _this = this;
 
             try {
                 fs.statSync(this.resolve(cfg.filename));
@@ -31,7 +32,8 @@ module.exports = {
     blocks: {
         'localizedfooter': {
             process: function(block) {
-                return '<div class="page-footer"><hr>' + block.body + '</div>';
+                var hline = cfg.hline ? '<hr>' : '';
+                return '<div class="page-footer">' + hline + block.body + '</div>';
             }
         }
     }
