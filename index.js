@@ -31,7 +31,7 @@ module.exports = {
     blocks: {
         'localizedfooter': {
             process: function(block) {
-                return '<div id="page-footer"><hr>' + block.body + '</div>';
+                return '<div class="page-footer"><hr>' + block.body + '</div>';
             }
         }
     }
